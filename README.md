@@ -106,6 +106,29 @@ publish\win-x64\HakedisCheck.exe
 
 Bu `.exe` dosyasi hedef Windows makinede ayrica .NET kurulumu olmadan calisacak sekilde uretilir.
 
+## GitHub Releases
+
+Repo, `v*` tag'lerinde otomatik release uretir.
+
+Ornek:
+
+```bash
+git tag v0.1.0
+git push origin v0.1.0
+```
+
+Bu oldugunda GitHub Actions:
+
+- Windows runner uzerinde uygulamayi build eder
+- `win-x64` self-contained tek dosya `.exe` uretir
+- GitHub `Releases` kismina versiyonlu release acar
+- su dosyalari release asset olarak yukler:
+  - `HakedisCheck.exe`
+  - `HakedisCheck-win-x64.zip`
+  - `HakedisCheck-win-x64.exe.sha256`
+
+Yani kullanici dogrudan `Releases` sayfasindan `.exe` indirebilir.
+
 ## Visual Studio'dan EXE Publish
 
 1. `HakedisCheck.App` projesine sag tikla
