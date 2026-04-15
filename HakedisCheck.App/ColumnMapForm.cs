@@ -30,6 +30,7 @@ public sealed class ColumnMapForm : Form
 
         BuildLayout(kind);
         LoadProfile(kind);
+        _sheetList.ItemCheck += (_, _) => BeginInvoke(RefreshHeaderChoices);
     }
 
     public ColumnProfile ResultProfile => _profile.Clone();
@@ -88,7 +89,6 @@ public sealed class ColumnMapForm : Form
 
         Controls.Add(root);
 
-        _sheetList.ItemCheck += (_, _) => BeginInvoke(RefreshHeaderChoices);
         _headerRowInput.ValueChanged += (_, _) => RefreshHeaderChoices();
         _firstDataRowInput.ValueChanged += (_, _) => UpdatePreviewText();
 
