@@ -1,0 +1,15 @@
+bin/
+obj/
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+*.cache
+*.tmp
+*.log
+TestResults/
+artifacts/
+publish/
+dist/
+_ReSharper*/
