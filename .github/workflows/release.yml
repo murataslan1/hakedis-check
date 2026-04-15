@@ -62,7 +62,27 @@ jobs:
         with:
           tag_name: ${{ github.ref_name }}
           name: HakedisCheck ${{ github.ref_name }}
-          generate_release_notes: true
+          body: |
+            ## HakedisCheck
+
+            HakedisCheck, alt yuklenici hak edis dosyalarini izin ve mesai Excel'leri ile karsilastirarak farklari otomatik bulan bir Windows aracidir.
+
+            ### Neye yarar?
+            - hak edis, izin ve mesai dosyalari arasindaki tutarsizliklari bulur
+            - personel bazinda OK / HATA / EKSIK sonuc uretir
+            - sonuc raporunu indirilebilir `.exe` ve Excel odakli bir is akisina tasir
+
+            ### Release Assets
+            - `HakedisCheck.exe`: tek dosya Windows uygulamasi
+            - `HakedisCheck-win-x64.zip`: sikistirilmis paket
+            - `HakedisCheck-win-x64.exe.sha256`: dogrulama ozeti
+
+            ### Branding
+            Built by [Murat Aslan](https://github.com/murataslan1)
+            GitHub: [@murataslan1](https://github.com/murataslan1)
+
+            ---
+            Otomatik release paketi `${{ github.ref_name }}` icin uretildi.
           files: |
             publish/win-x64/HakedisCheck.exe
             publish/HakedisCheck-win-x64.zip
