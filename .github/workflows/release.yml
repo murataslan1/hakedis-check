@@ -77,9 +77,10 @@ jobs:
             - `HakedisCheck-win-x64.zip`: sikistirilmis paket
             - `HakedisCheck-win-x64.exe.sha256`: dogrulama ozeti
 
-            ### Branding
+            ### Murat Aslan
             Built by [Murat Aslan](https://github.com/murataslan1)
             GitHub: [@murataslan1](https://github.com/murataslan1)
+            Repo: https://github.com/murataslan1/hakedis-check
 
             ---
             Otomatik release paketi `${{ github.ref_name }}` icin uretildi.
