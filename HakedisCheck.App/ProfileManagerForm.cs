@@ -86,16 +86,19 @@ public sealed class ProfileManagerForm : Form
             return;
         }
 
+        var headerLines = new[]
+        {
+            $"Profil: {profile.ProfileName}",
+            $"Başlık satırı: {profile.HeaderRowIndex}",
+            $"İlk veri satırı: {profile.FirstDataRowIndex}",
+            $"Sayfalar: {string.Join(", ", profile.SelectedSheets)}",
+            string.Empty,
+            "Kolonlar:"
+        };
+
         _detailsTextBox.Text = string.Join(
             Environment.NewLine,
-            [
-                $"Profil: {profile.ProfileName}",
-                $"Başlık satırı: {profile.HeaderRowIndex}",
-                $"İlk veri satırı: {profile.FirstDataRowIndex}",
-                $"Sayfalar: {string.Join(", ", profile.SelectedSheets)}",
-                "",
-                "Kolonlar:"
-            ].Concat(profile.ColumnMappings.Select(pair => $"{ProfileSchema.GetDisplayName(pair.Key)} => {pair.Value ?? "(yok)"}")));
+            headerLines.Concat(profile.ColumnMappings.Select(pair => $"{ProfileSchema.GetDisplayName(pair.Key)} => {pair.Value ?? "(yok)"}")));
     }
 
     private void LoadProfile()
